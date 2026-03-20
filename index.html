@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Andronache Daniel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cumpara comics și manga online. Gaseste seria ta favorita.">
+    <meta name="keywords" content="comic shop, benzi desenate, comics online, colecții manga, magazin online, graphic novel">
+    <title>Pieces of Fiction - Online Comics Store</title>
+    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./resurse/css/general.css" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+    <header>
+    <h1>Pieces of Fiction Comic Shop</h1>
+    <img src="sigla.png" alt="sigla" />
+    <nav>   
+        <ul>
+            <li>Acasa
+                <ul>
+                    <li>
+                        <a href="#welcome">Bine ati venit</a>
+                    </li>
+                    <li>
+                        <a href="#promotii">Promotii</a>
+                    </li>
+                    <li>
+                        <a href="#produse">Produse</a>
+                    </li>
+                    <li>
+                        <a href="#Flash">Flash</a>
+                    </li>
+                    <li>
+                        <a href="#orar">Orar</a>
+                    </li>
+                    <li>
+                        <a href="#galerie-statica">Galerie</a>
+                    </li>
+                    <li>
+                        <a href="#videoclipuri">Videoclipuri utile </a>
+                    </li>
+                </ul>
+            <li>Comics</li>
+            <li>Manga</li>
+            <li>Merch</li>
+        </ul>
+    </nav>
+    </header>
+    <main> <!--  comentariu -->
+        <div id="grid-pagina">
+
+            <section id="welcome">
+                <hgroup>
+                    <h2>Bine ati venit</h2>
+                    <p class="subtitlu">Fie că ești pasionat sau ești curios în legatura cu lumea comics și manga, 
+                        site-ul nostru oferă o gamă variată de produse și oferte ce vă pot satisface preferințele. 
+                        Explorează titlurile populare, noi realese-uri și cele mai bine vândute cărți.</p>
+                </hgroup>
+
+                <p class="intro">Vă mulțumim că ne vizitați site-ul.</p>
+                
+                <div class="intro-oferte"><div>Comics</div><div>Manga</div><div>Tricouri</div><div>Accesorii</div></div>
+                <p class="anunt-intro">Nu găsiți cartea dorita, nicio problema! Puteti face o solicitare si noi o să obținem produsul cat ai zice <em>POW!</em></p>
+                <div id="dv-prezentare-1">
+                    <div id="dv-prezentare">
+                    <figure>
+                    <picture>
+                        <!-- il ia pe primul care se potriveste cu query-ul din media-->
+                        <source srcset="./resurse/imagini/imagine_anunt_300x199.png" media="(max-width:700px)"/>
+                        <source srcset="./resurse/imagini/imagine_anunt.png" media="(max-width:1200px)"/>
+                        <img src="./resurse/imagini/imagine_anunt_mare.png" alt="text" title="cititor"/>
+                    </picture>
+                    <figcaption>Persoană care citește benzi desenate</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <hr class="carti"/>
+            <!-- /*
+            <div id="container-video">
+                <img style="width:50%" class="comics" src="resurse/imagini/comic_book_sample.jpg" alt="comic book sample" title="Un model de comic sablon">
+                <div id="centrare-video">
+                    <div id="clip-video">
+                        <div id="stil-video">
+                            <video width="320" height="240"  playsinline autoplay loop muted>
+                                <source src="resurse/video/Chocolate.mp4" type="video/mp4">
+                                <source src="resurse/video/Chocolate.ogv" type="video/ogv">
+                                <track default src="data:image/png;base64, V0VCVlRUIC0gQ2lvY29sYXTEgwoKMDA6MDAuMDAwIC0tPiAwMDowMy4wMDAgbGluZTowCkNpb2NvbGF0xIMhISEKCjAwOjAzLjAwMCAtLT4gMDA6MDcuMDAwIGxpbmU6MApNdWx0xIMgY2lvY29sYXTEgyEhISEKCjAwOjA5LjAwMCAtLT4gMDA6MTQuMDAwIGxpbmU6MApVcHMsIGFtIG11cmTEg3JpdCBtYXNhIQoKMDA6MTQuNTAwIC0tPiAwMDoxOS4wMDAgbGluZTowCk51IGNvbnRlYXrEgyEgQ2lvY29sYXTEg8SDxIPEg8SDxIMhCgo=" kind="captions" srclang="ro" label="romana">
+                                <track src="data:image/png;base64, V0VCVlRUIC0gQ2hvY29sYXRlDQoNCjAwOjAwLjAwMCAtLT4gMDA6MDMuMDAwDQpDaG9jb2xhdGUhISENCg0KMDA6MDMuMDAwIC0tPiAwMDowNy4wMDANCkxvdHMgb2YgY2hvY29sYXRlISEhIQ0KDQowMDowOS4wMDAgLS0+IDAwOjE0LjAwMA0KT3VwcywgdGFibGUgZ290IGRpcnR5IQ0KDQowMDoxNC41MDAgLS0+IDAwOjE5LjAwMA0KRG9lc24ndCBtYXR0ZXIhIENob2NvbGF0ZSEhIQ0KDQo=" kind="captions" srclang="en" label="engleza">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+            </section>
+            <section id="promotii">
+                <h2>Promoții și oferte</h2>
+                <article>
+                    <h3 class="titlu">Super ofertă de weekend</h3>
+                    <p>Magazinul <b>Pieces of fiction</b> oferă <b>reduceri de <s>25%</s> <ins>30%</ins></b> pentru al 3-lea produs cumpărat.</p>
+                    <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediile <abbr title="Pieces of fiction">POF</abbr>.</p>
+                    <p>în cazul în care vă aflați printre primi 10 clienți ai zilei, puteți primi un <b>poster</b> cadou!</p>
+                </article>
+                <article>
+                    <h3>Ofertă pachet</h3>
+                    <p>Pieces of Fiction comic shop oferă pachete <b>Starter Manga</b>, cuprinzând:</p>
+                    <ol>
+                        <li>Primele 3 Volume din seria aleasă de tine.</li>
+                        <li>Semn de carte tematic personalizat.</li>
+                        <li>Un mic<i lang="en"> flyer</i> cu ordinea volumelor și recomandări similare.</li>
+                        <li>Un <i>snack</i> japonez(pachet de Pocky sau Mochi)</li>
+                        <li>Gratis: Set de 5 Stickere Premium cu personaje principale.</li>
+                    </ol>
+                </article>
+                <article>
+                    <h3>Benzi desenate de ziua copilului!</h3>
+                    <p>De 1 Iunie, vom avea reduceri de până la 40% la gama de benzi desenate pentru copii!</p>
+                    <p>Vă prezentăm gama noastră de produse destinate copiilor:</p>
+                    <ol>
+                        <li>Super-Eroi în devenire: variantele „prietenoase” ale marilor eroi. </li>
+                        <li>Umor și aventură: Dog Man de Dav Pilkey, Jurnalul unui puști de Jeff Kinney, Big Nate de Lincoln Peirce.</li>
+                        <li>Manga japoneză adresată copiilor: Doraemon, Pokemon, Capitan Tsubasa, Chopperman (parodie la seria de aventură One Piece). </li>
+                    </ol>
+                </article>
+            </section>
+            <section id="produse">
+                <h2>Produsele noastre</h2>
+                <blockquote cite = "https://www.goodreads.com/quotes/tag/comic-books">"A picture is worth a thousand words, but a comic is worth a million." - Stan Lee</blockquote>
+                <section>
+                    <h3>Super-Eroi</h3>
+                    <p>Mult îndrăgitele benzi desenate cu super eroi și lupte epice. Descoperă universul Marvel și DC.</p>
+                    <p>Avem titluri precum:</p>
+                    <ul>
+                        <li>Spider-Man</li>
+                        <li>Superman</li>
+                        <li>Batman</li>
+                        <li>Capitan America</li>
+                        <li>Flash</li>
+                        <li>Deadpool</li>
+                    </ul>
+                    <p>
+                    Dacă vrei să afli mai multe despre informații despre benzile desenate cu Super-Eroi, poți vizita
+                    <a href="https://www.marvel.com" target="_blank">
+                    site-ul oficial Marvel
+                    </a>.
+                    </p>
+                </section>
+                <section>
+                    <h3>Manga</h3>
+                    <p>Benzile desenate japoneze, cunoscute drept manga, care se citesc de la dreapta la stânga.</p>
+                    <p>Dispunem de o gamă largă de categorii:</p>
+                    <ul>
+                        <li><dfn>Shonen</dfn> (tradus din japoneză: "băiat tânăr") - reprezintă o categorie de benzi desenate destinate băieților.</li>
+                        <li><dfn>Seinen</dfn> - categorie de benzi desenate destinate publicului matur.</li>
+                        <li><dfn>Shoujo</dfn> - categorie de benzi desenate pentru audiența feminină tânără.</li>
+                        <li><dfn>Slice-of-life</dfn> - accentul pe viața de zi cu zi.</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <h3>Merch</h3>
+                    <p>Produse de merch:</p>
+                    <ul>
+                        <li>Tricouri</li>
+                        <li>Brelocuri</li>
+                        <li>Accesorii</li>
+                        <li>Postere</li>
+                    </ul>
+                </section>
+            </section>
+            <section id="Flash">
+            <h2>The Flash!</h2>
+            <p>The Flash este un supererou din universul DC Comics, cunoscut ca „cel mai rapid om în viață”. Cu ajutorul puterilor sale de super-viteză, 
+                el protejează orașul Central City și luptă împotriva criminalilor.</p>
+
+            <p>Biografie personaj:
+            <a href="https://en.wikipedia.org/wiki/The_Flash#Fictional_character_biographies">https://en.wikipedia.org/wiki/The_Flash#Fictional_character_biographies personaj</a>
+            </p>
+            
+            <p>The Flash #1 (2023) - Preview:</p>
+            <embed src="resurse/imagini/The_Flash_Preview.pdf" type="application/pdf" width="300" height="450" title="Preview Flash">
+            <p>Poster (click pe imagine):</p>
+            <a href="resurse/imagini/Flash_poster.jpg" target="_parent">
+                <img src="resurse/imagini/The_Flash_mini.png" alt = "The Flash">
+            </a>  
+            <br>
+            <a href="resurse/imagini/Flash_poster.jpg" download="Flash_poster_download.jpg">Descarcă poster</a>
+            </section>
+            <section id="orar">
+                <h2>Orar</h2>
+                <table id="tab-orar">
+                    <thead>
+
+                        <tr>
+                            <th>Cod</th>
+                            <th>Perioadă</th>
+                            <th>Zi</th>
+                            <th>Interval dimineata</th>
+                            <th>Pauza de masa</th>
+                            <th>Interval seară</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td rowspan="5">Zile<br/>Lucrătoare</td>
+                            <td>Luni</td>
+                            <td>10-12</td>
+                            <td>12-14</td>
+                            <td>14-20</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            
+                            <td>Marti</td>
+                            <td>9-12</td>
+                            <td>12-14</td>
+                            <td>14-21</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            
+                            <td>Miercuri</td>
+                            <td>9-11</td>
+                            <td>11-13</td>
+                            <td>14-21</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            
+                            <td>Joi</td>
+                            <td>9-11</td>
+                            <td>11-13</td>
+                            <td>14-21</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            
+                            <td>Vineri</td>
+                            <td>9-12</td>
+                            <td>12-14</td>
+                            <td>14-19</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td rowspan="2">Weekend</td>
+                            <td>Sambata</td>
+                            <td>10-12</td>
+                            <td>12-13</td>
+                            <td>13-16</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Duminica</td>
+                            <td>10-14</td>
+                            <td>-</td>
+                            <td>inchis</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">Închis cu ocazia sărbătorilor legale, sau, când ne e mai lene așa.</td>
+                        </tr>
+                    </tfoot>
+                </table> 
+                <p><strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>
+            </section>
+
+            <section id="anunturi">
+                <h2 class="fg-img">Evenimente și anunțuri</h2>
+                <p><time datetime="2025-03-15T12:00">15 martie 2025 ora 12:00</time> <span> <b>Colectie nouă - </b>Am adaugat o colecție nouă în gama Super-Eroi.</span></p>
+                <p><time datetime="2025-04-05">5 aprilie 2025</time> <b>Shonen Day - </b><span>Noi colecții adaugate în gama Shonen Manga. </span></p>
+                <p><time datetime="2025-07-05T12:00">5 iulie 2025</time> <b>Atelier de desen - </b>Vino la ora 12 la atelierul de desen desfășurat în cadrul magazinului <abbr title="Pieces of fiction">POF</abbr>.</p>
+                <p><time datetime="2025-09-15">15 septembrie 2025</time> <b>Marvel Reduceri - </b>Ultima zi pentru reducerea la comics Marvel!</p>
+                <p><time datetime="2026-01-01">1 ianuarie 2026</time> <b>Un an nou fericit!</b></p>
+                <p><time datetime="2026-02-11">11 februarie 2026</time> <b>Studiu de caz - </b>Studiile arata ca peste 70% dintre cititori de benzi desenate preferă formatul fizic peste cel electronic.</p>
+            </section>
+            <section id="index-intrebari">
+                <h2>Întrebări frecvente</h2>
+                <details><summary>Ce tipuri de comics pot găsi pe site?</summary>
+                    <p>Pe site găsești o varietate de benzi desenate, inclusiv comics cu supereroi, manga și ediții speciale pentru colecționari.</p>
+                </details>
+                <details><summary>Comics-urile sunt în limba română sau engleză?</summary>
+                    <p>Majoritatea titlurilor sunt în limba engleză, dar există și ediții traduse în română. Limba este specificată pe pagina produsului.</p>
+                </details>
+                <details><summary>Produsele sunt noi sau second-hand?</summary>
+                    <p>Majoritatea comics-urilor sunt noi, dar unele ediții rare sau vintage pot fi second-hand. Starea fiecărui produs este menționată în descriere.</p>
+                </details>
+                <details><summary>Pot returna un comic dacă nu sunt mulțumit?</summary>
+                    <p>Da, produsele pot fi returnate în termen de 14 zile, conform politicii de retur, dacă sunt în aceeași stare în care au fost primite.</p>
+                </details>
+            </section>
+        </div>
+        <section id="galerie-statica">
+            <h2>Galerie</h2>
+            <div id="grid-galerie">
+                <figure id="fig1">
+                    <div>
+                        <img src="resurse/imagini/Spider-Man.png" alt="Spider-Man"></div>
+                <figcaption>Spider-Man</figcaption>
+                </figure>
+                <label>Popularitate:</label>
+                <meter min="1" max="10" low="3" high="7" optimum="9" value="9">
+                9
+                </meter>
+                
+                <figure id="fig2" class="fg-img">
+                    <img src="resurse/imagini/Superman.png" alt="Superman">
+                <figcaption>Superman</figcaption>
+                </figure>
+                <label>Popularitate:</label>
+                <meter min="1" max="10" low="3" high="7" optimum="9" value="3">
+                3
+                </meter>
+                
+                <figure  id="fig3" class="fg-img">
+                <img src="resurse/imagini/Naruto.png" alt="Naruto">
+                <figcaption>Naruto</figcaption>
+                </figure>
+                <label>Popularitate:</label>
+                <meter min="1" max="10" low="3" high="7" optimum="9"  value="8">
+                8
+                </meter>
+                
+                <figure  id="fig4">
+                <img src="resurse/imagini/One_Piece.png" alt="One Piece">
+                <figcaption>One Piece</figcaption>
+                </figure>
+                <label>Popularitate:</label>
+                <meter min="1" max="10" low="3" high="7" optimum="9" value="6">
+                6
+                </meter>
+                
+        </div>
+        </section>
+        <section id="videoclipuri">
+            <h2>Videoclipuri utile</h2>
+            <p>Nu aveți idee ce să citiți? Vă lăsam următoarele recomandări și un mini-tutorial pentru cei care nu sunt familiari cu cititul manga.</p>
+            <div class="container-iframe">
+                <div class="taburi-iframe">
+                <a href="https://www.youtube.com/embed/sNDloZKL3xw" target="ifr-video">Top 10 comics</a>
+                <a href="https://www.youtube.com/embed/XlU5WEvz6Hk" target="ifr-video" >Top 10 manga</a>
+                <a href="https://www.youtube.com/embed/9PpmYJLH30s" target="ifr-video" >Cum se citește manga</a>
+                <br/>
+                </div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/sNDloZKL3xw" name="ifr-video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            </div>
+        </section>
+
+
+
+    </main>
+    <footer>
+        <a href = #welcome>Inapoi sus</a>
+        <address>Adresa:
+         <a href="https://www.google.com/maps/place/Facultatea+de+Matematică+și+Informatică/@44.4355355,26.0995867,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867!16s%2Fg%2F1td63tdh?entry=ttu&g_ep=EgoyMDI2MDMwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Calea hartiei, nr 11, București, <br>Sector 1, România</a>
+        </address>
+        <br>
+        <a href="tel:+40712345678">Contact</a>
+        <a href="mailto:ionel@gmail.com">E-mail</a>
+        <br>
+        <a  href="https://wa.me/1XXXXXXXXXX" target="_blank">WhatsApp
+        </a>
+        <p><small>Copyright &copy; 2026 Ionel Popescu</small></p>
+    </footer>
+</body>
+
+</html>
