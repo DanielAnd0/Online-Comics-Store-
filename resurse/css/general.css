@@ -1,26 +1,278 @@
 body{
-    --culoare-fundal: rgb(249, 252, 254);
+    --highlight-color: #E0AA2F;
+    --culoare-fundal: #2E6AE0;
+    --culoare-text: #FFFFFF;
+    --culoare-fundal-text: #4A67A1;
+    --culoare-fundal-text2: #454E61;
+    --culoare-contur: #363430;
     --margine-pagina: 150px;
     background-color: var(--culoare-fundal);
+    color:var(--culoare-text)
 }
 
-p{
-    border: 1px solid var(--culoare-fundal);
+
+
+
+a{
+    color: var(--highlight-color);
+    text-decoration: none;
 }
 
- main{
+
+/* p{
+    border: 1px solid var(--culoare-fundal-text); 
+} */
+
+main{
     margin-left: var(--margine-pagina);
     margin-right: var(--margine-pagina);
  }
+
+#grid-pagina > * {
+    background-color: var(--culoare-fundal-text);
+    border:1px solid var(--culoare-contur);
+    box-shadow: 0px 0px 5px var(--culoare-contur);
+    padding: 10px;
+}
+
+
+/* Task 2: Grid Layout */
+
+#grid-pagina{
+    display: grid;
+    gap:10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "zona1 zona1 zona1 zona1"
+                         "zona8 zona8 zona8 zona8"
+                         "zona3 zona2 zona2 zona4"    
+                         "zona5 zona6 zona7 zona7";
+} 
+
+
+#zona1{
+    grid-area: zona1;
+}
+#zona2{
+    grid-area: zona2;
+}
+#zona3{
+    grid-area: zona3;
+}
+#zona4{
+    grid-area: zona4;
+}
+#zona5{
+    grid-area: zona5;
+}
+#zona6{
+    grid-area: zona6;
+}
+#zona7{
+    grid-area: zona7;
+}
+#zona8{
+    grid-area: zona8;
+}
+
+
+/*
+Task 3: Iframe-uri
+*/
+
+.container-iframe{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+    justify-content: center;
+}
+
+.taburi-iframe{
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* height: 100%; */
+    flex-basis: 15%;
+}
+
+.container-iframe > iframe{
+    border: 10px inset var(--culoare-contur);
+    aspect-ratio: 16/9;
+    width: auto;
+    max-width: 60%;
+    height: 100%;
+
+}
+
+.taburi-iframe > a{
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--culoare-fundal);
+    border: 3px double var(--culoare-contur);
+    color: var(--culoare-contur);
+    text-decoration: none;
+    border-left: none;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    transition: all 1s linear;
+}
+
+.taburi-iframe > a:hover{
+    background-color: var(--culoare-fundal-text);
+    text-align: right;
+    width: 120%;
+} 
+
+
+/*TASK: Design rudimentar*/
+
+/*delimitare header si footer*/
+body>header,footer{
+    background-color: var(--culoare-contur);
+    margin: 5px;
+    padding: 5px;
+    color: var(--culoare-fundal);
+    box-shadow: 0px 0px 5px var(--culoare-contur)
+}
+
+/* Stilizare zona8 + fonturi + icon */
+
+#titlu-site{
+    text-align: center;
+}
+
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+#grid-galerie{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#grid-galerie > figure {
+    margin: 5px;
+    text-align: center;
+}
+
+#grid-galerie img{
+     border: 2px solid var(--culoare-contur);
+}
+
+#Flash > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+#pdf{
+    border: 3px solid var(--culoare-contur);
+}
+
+#Flash-box > div{
+    text-align: center;
+}
+
+/* Task 4: Stilizare tabel */
+#tab-orar{
+    border-collapse: separate; 
+    border-spacing: 2px;
+}
+
+
+#tab-orar td, #tab-orar th{
+    border: 1px solid var(--culoare-contur);
+}
+
+
+#tab-orar tbody tr:nth-child(even){
+    background-color: var(--culoare-fundal);
+}
+
+
+#tab-orar tbody tr:hover{
+    background-color: var(--culoare-fundal-text2);
+}
+
+.exceptie{
+    background-color: var(--culoare-fundal-text);
+}
+
+
+
+/* Task 5: Link top */
+
+#link-sus{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--culoare-fundal);
+    color: var(--culoare-contur);
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--culoare-contur);
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px var(--culoare-contur);
+    opacity: 0.5;
+    transition: all 0.5s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#link-sus p{
+    margin: 0;
+    font-size: 28px;
+}
+
+#link-sus:hover {
+    box-shadow: 0px 0px 20px var(--culoare-contur);
+    opacity: 1;
+}
+
+
+
  @media screen and (max-width: 1200px) {
     body{
         --margine-pagina: 80px;
     }
+    #grid-pagina{
+        grid-template-columns: 1fr 1fr; 
+        gap:5px;
+        grid-template-areas: "zona1 zona1"
+                             "zona8 zona8"
+                             "zona3 zona2"    
+                             "zona4 zona5"
+                             "zona6 zona7";
+    }
+    #div-orar{
+    overflow-x:scroll;
+}
+
  }
 
   @media screen and (max-width: 700px) {
     body{
         --margine-pagina: 50px;
+    }
+    #grid-pagina{
+    
+        display: block;
+    }
+    #tab-orar{
+        border-collapse: collapse;
+    }
+    #div-orar{
+    overflow-x: scroll;
     }
 }
 

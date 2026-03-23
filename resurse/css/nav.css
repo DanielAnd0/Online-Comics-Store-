@@ -1,0 +1,6 @@
+nav{
+    --latime-buton: 120px;
+    --inaltime-buton: 30px;
+    background-color: var(--culoare-contur);
+    color: var(--culoare-fundal);
+}
