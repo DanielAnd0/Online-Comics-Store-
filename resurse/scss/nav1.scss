@@ -1,0 +1,132 @@
+//ETAPA 3 - TASK 1 - meniuri
+
+nav {
+  --latime-buton:150px;
+  --inaltime-buton:33px;
+  --culoare-deschisa-meniu:var(--culoare-fundal);
+  --culoare-inchisa-meniu:var(--culoare-contur);
+  background-color: var(--culoare-inchisa-meniu);
+  color:var(--culoare-deschisa-meniu);
+  z-index: 100;
+  position: relative;
+}
+
+#hamburger, #ch-menu {
+  display: none;
+}
+
+ul.meniu div.imag-icon {
+  display: none;
+} 
+
+/*  submeniu  */
+ul.meniu {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.submeniu {
+  display: none;
+  padding: 0;
+  list-style-type: none;
+  z-index: 3;
+  position: relative;
+  margin-left: -1px;
+  animation-name: afis_submeniu;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  transform-origin: 50% 0;
+}
+
+ul.meniu li {
+  border: 1px solid var(--culoare-deschisa-meniu);
+  background-color: var(--culoare-inchisa-meniu);
+  width: var(--latime-buton);
+  height: var(--inaltime-buton);
+  line-height: var(--inaltime-buton);
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.5s linear;
+  box-sizing: border-box;
+}
+
+
+ul.meniu li:hover {
+    font-size: large;
+}
+
+ul.meniu li:hover ul {
+  display: block;
+}  
+
+ul.submeniu li , ul.submeniu li a {
+  text-decoration: none;
+  color: var(--culoare-deschisa-meniu);
+  border: none;
+  display: block;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+ul.submeniu li::before{
+  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left:0;
+  width: calc(0.025*var(--latime-buton));
+  height: var(--inaltime-buton);       
+  background-image: linear-gradient(to right, var(--culoare-deschisa-meniu), var(--culoare-inchisa-meniu));
+}
+ul.submeniu li::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top:0;
+  left:calc(0.975*var(--latime-buton));
+  width: calc(0.025*var(--latime-buton));
+  height: var(--inaltime-buton);       
+  background-image: linear-gradient(to left, var(--culoare-deschisa-meniu), var(--culoare-inchisa-meniu));
+
+}
+
+$submenius: (
+  1: 7,   // submeniu 1 are 7 elemente
+  2: 6,   // submeniu 2 are 4 elemente
+  3: 4,   // submeniu 3 are 4 elemente
+
+);
+
+//pt submeniu ACASA
+@each $submeniu, $nr-elemente in $submenius {
+  @for $i from 1 through $nr-elemente {
+    ul.meniu > li:nth-child(#{$submeniu}) ul.submeniu li:nth-child(#{$i})::before, ul.meniu > li:nth-child(#{$submeniu}) ul.submeniu li:nth-child(#{$i})::after{
+      top: calc((#{$i} - 1) * var(--inaltime-buton));
+    }
+  }
+}
+
+
+ul.submeniu li:hover::before, ul.submeniu li:hover::after{
+  display: block;
+  animation-name: afis_submeniu;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  transform-origin: 50% 0;
+
+}
+
+@keyframes afis_submeniu {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

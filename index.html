@@ -12,9 +12,13 @@
     <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
     <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest"/>
     <link rel="stylesheet" href="./resurse/css/general.css" type="text/css"/>
-    <link rel="stylesheet" href="./resurse/css/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="./resurse/css/nav1.css" type="text/css"/>
+    <link rel="stylesheet" href="./resurse/css/nav1000.css" type="text/css"/>
+    <link rel="stylesheet" href="./resurse/css/nav700.css" type="text/css"/>
+    <link rel="stylesheet" href="./resurse/css/print.css" type="text/css"/>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,17 +26,16 @@
 </head>
 
 <body>
-    <header>
-    <h1 class="bungee-regular" id="titlu-site">
-        <i class="fa-brands fa-leanpub" style="color: var(--culoare-fundal)"></i>
-        Pieces of Fiction Comic Shop
-    <i class="fa-brands fa-leanpub" style="color: var(--culoare-fundal);"></i>
-    </h1>
-    <!-- <img src="sigla.png" alt="sigla" /> -->
-    <nav>   
-        <ul>
-            <li>Acasa
-                <ul>
+    <nav>
+        <label id="hamburger" for="ch-menu">
+            <img src="/resurse/imagini/Hamburger_icon_alb.png" alt="menu">    
+        </label>   
+        <input type="checkbox" id="ch-menu"/>
+        <ul class="meniu">
+            <li>
+                <i class="fa-solid fa-house" style="color: var(--culoare-fundal);"></i>
+                <span>Acasa</span>
+                <ul class="submeniu">
                     <li>
                         <a href="#welcome">Bine ati venit</a>
                     </li>
@@ -55,11 +58,44 @@
                         <a href="#videoclipuri">Videoclipuri utile </a>
                     </li>
                 </ul>
-            <li>Comics</li>
-            <li>Manga</li>
-            <li>Merch</li>
+            <li>
+                <i class="fa-solid fa-hand-fist" style="color: var(--culoare-fundal);"></i>
+                <span>Comics</span>
+                <ul class="submeniu">
+                    <li><a href="#comics-Spider-Man">Spider-Man</a></li>
+                    <li><a href="#comics-Superman">Superman</a></li>
+                    <li><a href="#comics-Batman">Batman</a></li>
+                    <li><a href="#comics-Capitan-America">Capitan America</a></li>
+                    <li><a href="#comics-Flash">The Flash</a></li>
+                    <li><a href="#comics-Deadpool">Deadpool</a></li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa-solid fa-torii-gate" style="color: var(--culoare-fundal);"></i>
+                <span>Manga</span>
+                <ul class="submeniu">
+                    <li><a href="#manga-shonen">Shonen</a></li>
+                    <li><a href="#manga-shojo">Shojo</a></li>
+                    <li><a href="#manga-seinen">Seinen</a></li>
+                    <li><a href="#manga-slice-of-life">Slice-of-life</a></li>
+                </ul>
+            </li>
+            <li>
+                <i class="fa-solid fa-shirt" style="color: var(--culoare-fundal);"></i>
+                <span>Merch</span>
+            </li>
         </ul>
     </nav>
+    <header>
+    <div id="pagina-titlu">
+    <h1 class="bungee-regular" id="titlu-site">
+        <i class="fa-brands fa-leanpub" style="color: var(--culoare-fundal)"></i>
+        Pieces of Fiction Comic Shop
+    <i class="fa-brands fa-leanpub" style="color: var(--culoare-fundal);"></i>
+    </h1>
+    </div>
+    <!-- <img src="sigla.png" alt="sigla" /> -->
+    
     </header>
     <main> <!--  comentariu -->
         <div id="grid-pagina">
@@ -388,6 +424,7 @@
         </div>
     </main>
     <footer>
+        <p id="banner-print">Acesta este un proiect școlar!</p>
         <a id="link-sus" href = #grid-pagina title="Inapoi sus">
             <p>&#5123;</p>
         </a>

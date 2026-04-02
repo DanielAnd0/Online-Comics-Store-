@@ -1,0 +1,71 @@
+@media print{
+    #dv-prezentare-1, #Flash-box *, #galerie-statica, #videoclipuri, #link-sus, iframe{
+        display: none;
+    }
+    #grid-pagina{
+        display: block;
+    }
+
+    main{
+    margin-left: calc(0.5*var(--margine-pagina));
+    margin-right: calc(0.5*var(--margine-pagina));
+    }
+    nav{
+        display: none;
+    }
+    #banner-print{
+        display: inline-block;
+        color:black;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        left:10vw;
+        z-index: 100;
+        background-color: var(--culoare-fundal);
+        border: 2px black;
+        border-style: dotted; 
+        width: 80vw;
+    }
+
+
+#pagina-titlu {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        break-after: page;
+  }
+
+#titlu-site{
+        display: block;   
+        text-align: center;
+        text-decoration: underline;
+        font-size: 2.5rem;  
+    }
+footer{
+    break-before: page;
+}
+
+  body::after {
+    content: "Andronache Daniel";
+    position: fixed;
+    top: calc(100vh - 100px);
+    left: 0;
+    width: 100px;
+    height: 2cm;
+    border: 3px double black;
+    opacity: 0.65;
+    color: black;
+    text-align: center;
+  }
+
+  @page :left {
+  margin-left: 2.5cm;
+  margin-right: 0.5cm;
+}
+
+@page :right {
+  margin-right: 2.5cm;
+  margin-left: 0.5cm;
+}
+}
