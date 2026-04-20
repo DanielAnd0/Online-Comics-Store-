@@ -1,0 +1,38 @@
+{
+  "name": "proiect-tehnici-web",
+  "version": "1.0.0",
+  "description": "Proiect tehnici web - magazin online de benzi desenate",
+  "keywords": [
+    "comic",
+    "shop",
+    "benzi",
+    "desenate",
+    "comics",
+    "manga",
+    "magazin",
+    "online",
+    "graphic",
+    "novel"
+  ],
+  "homepage": "https://github.com/DanielAnd0/Online-Comics-Store-#readme",
+  "bugs": {
+    "url": "https://github.com/DanielAnd0/Online-Comics-Store-/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielAnd0/Online-Comics-Store-.git"
+  },
+  "license": "ISC",
+  "author": "Andronache Daniel",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "sass": "^1.99.0",
+    "sharp": "^0.34.5"
+  }
+}

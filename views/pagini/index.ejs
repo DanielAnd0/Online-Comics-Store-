@@ -2,105 +2,16 @@
 <html lang="ro">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Andronache Daniel">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cumpara comics și manga online. Gaseste seria ta favorita.">
     <meta name="keywords" content="comic shop, benzi desenate, comics, manga, magazin online, graphic novel">
     <title>Pieces of Fiction - Online Comics Store</title>
-    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest"/>
-    <link rel="stylesheet" href="./resurse/css/general.css" type="text/css"/>
-    <link rel="stylesheet" href="./resurse/css/nav1.css" type="text/css"/>
-    <link rel="stylesheet" href="./resurse/css/nav1000.css" type="text/css"/>
-    <link rel="stylesheet" href="./resurse/css/nav700.css" type="text/css"/>
-    <link rel="stylesheet" href="./resurse/css/print.css" type="text/css"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <%- include('../fragmente/head.ejs') %>
 </head>
 
 <body>
-    <nav>
-        <label id="hamburger" for="ch-menu">
-            <!-- <img src="/resurse/imagini/Hamburger_icon_alb.png" alt="menu">     -->
-            <!-- TO DO - MENIU HAMBURGER CU DIVURI SI ANIMATIE PE DIVURI-->
-            <div id="hamburger1"></div> 
-             <div id="hamburger2"></div>
-             <div id="hamburger3"></div>
-       </label>   
-        <input type="checkbox" id="ch-menu"/>
-        <ul class="meniu">
-            <li>
-                <i class="fa-solid fa-house" style="color: var(--culoare-fundal);"></i>
-                <span>Acasa</span>
-                <ul class="submeniu">
-                    <li>
-                        <a href="#welcome">Bine ati venit</a>
-                    </li>
-                    <li>
-                        <a href="#promotii">Promotii</a>
-                    </li>
-                    <li>
-                        <a href="#produse">Produse</a>
-                    </li>
-                    <li>
-                        <a href="#Flash">Flash</a>
-                    </li>
-                    <li>
-                        <a href="#orar">Orar</a>
-                    </li>
-                    <li>
-                        <a href="#galerie-statica">Galerie</a>
-                    </li>
-                    <li>
-                        <a href="#videoclipuri">Videoclipuri utile </a>
-                    </li>
-                </ul>
-            <li>
-                <i class="fa-solid fa-hand-fist" style="color: var(--culoare-fundal);"></i>
-                <span>Comics</span>
-                <ul class="submeniu">
-                    <li><a href="#comics-Spider-Man">Spider-Man</a></li>
-                    <li><a href="#comics-Superman">Superman</a></li>
-                    <li><a href="#comics-Batman">Batman</a></li>
-                    <li><a href="#comics-Capitan-America">Capitan America</a></li>
-                    <li><a href="#comics-Flash">The Flash</a></li>
-                    <li><a href="#comics-Deadpool">Deadpool</a></li>
-                </ul>
-            </li>
-            <li>
-                <i class="fa-solid fa-torii-gate" style="color: var(--culoare-fundal);"></i>
-                <span>Manga</span>
-                <ul class="submeniu">
-                    <li><a href="#manga-shonen">Shonen</a></li>
-                    <li><a href="#manga-shojo">Shojo</a></li>
-                    <li><a href="#manga-seinen">Seinen</a></li>
-                    <li><a href="#manga-slice-of-life">Slice-of-life</a></li>
-                </ul>
-            </li>
-            <li>
-                <i class="fa-solid fa-shirt" style="color: var(--culoare-fundal);"></i>
-                <span>Merch</span>
-            </li>
-        </ul>
-    </nav>
-    <header>
-    <div id="pagina-titlu">
-    <h1 class="bungee-regular" id="titlu-site">
-        <i class="fa-brands fa-leanpub" style="color: var(--culoare-fundal)"></i>
-        Pieces of Fiction Comic Shop
-    <i class="fa-brands fa-leanpub" style="color: var(--culoare-fundal);"></i>
-    </h1>
-    </div>
-    <!-- <img src="sigla.png" alt="sigla" /> -->
-    
-    </header>
+
+    <%- include('../fragmente/header.ejs') %>   
     <main> <!--  comentariu -->
         <div id="grid-pagina">
 
@@ -121,9 +32,9 @@
                     <figure>
                     <picture>
                         <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                        <source srcset="./resurse/imagini/imagine_anunt_300x199.png" media="(max-width:700px)"/>
-                        <source srcset="./resurse/imagini/imagine_anunt.png" media="(max-width:1200px)"/>
-                        <img src="./resurse/imagini/imagine_anunt_mare.png" alt="text" title="cititor"/>
+                        <source srcset="/resurse/imagini/imagine_anunt_300x199.png" media="(max-width:700px)"/>
+                        <source srcset="/resurse/imagini/imagine_anunt.png" media="(max-width:1200px)"/>
+                        <img src="/resurse/imagini/imagine_anunt_mare.png" alt="text" title="cititor"/>
                     </picture>
                     <figcaption>Persoană care citește benzi desenate</figcaption>
                     </figure>
@@ -427,24 +338,7 @@
             </section>
         </div>
     </main>
-    <footer>
-        <p id="banner-print">Acesta este un proiect școlar!</p>
-        <a id="link-sus" href = #grid-pagina title="Inapoi sus">
-            <p>&#5123;</p>
-        </a>
-        <address>Adresa:
-         <a href="https://www.google.com/maps/place/Facultatea+de+Matematică+și+Informatică/@44.4355355,26.0995867,17z/data=!3m1!4b1!4m6!3m5!1s0x40b1ff472f47f047:0x493984726f0235f9!8m2!3d44.4355355!4d26.0995867!16s%2Fg%2F1td63tdh?entry=ttu&g_ep=EgoyMDI2MDMwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Calea hartiei, nr 11, București, <br>Sector 1, România</a>
-         <br>  
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8841143984114!2d26.09701177541378!3d44.435539301483026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff472f47f047%3A0x493984726f0235f9!2sFacultatea%20de%20Matematic%C4%83%20%C8%99i%20Informatic%C4%83!5e0!3m2!1sro!2sro!4v1774274302774!5m2!1sro!2sro" width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </address>
-        <br>
-        <a href="tel:+40712345678">Contact</a>
-        <a href="mailto:ionel@gmail.com">E-mail</a>
-        <br>
-        <a  href="https://wa.me/1XXXXXXXXXX" target="_blank">WhatsApp
-        </a>
-        <p><small>Copyright &copy; 2026 Ionel Popescu</small></p>
-    </footer>
+    <%- include('../fragmente/footer.ejs') %>
 </body>
 
 </html>

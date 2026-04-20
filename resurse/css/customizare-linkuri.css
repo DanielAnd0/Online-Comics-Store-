@@ -1,0 +1,9 @@
+a[href^="http://"],
+a[href^="https://"] {
+  color: var(--highlight-color);
+}
+
+
+
+/* link vizitat deja de utilizator */
+a:visited { color: var(--culoare-contur); }

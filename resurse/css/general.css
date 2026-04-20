@@ -266,6 +266,9 @@ body>header,footer{
     body{
         --margine-pagina: 50px;
     }
+    body *{
+        transition: none;
+    }
     #grid-pagina{
     
         display: block;
