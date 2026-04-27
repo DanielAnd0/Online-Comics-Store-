@@ -1,0 +1,110 @@
+<style>
+    #grid-galerie{counter-reset: index;}
+    .galerie_index::before {
+        counter-increment: index;
+        content: counter(index, upper-roman) ". ";
+    }
+
+    #grid-galerie{
+        display: grid;
+        gap:1px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:"img-1 img-2 img-3"
+                            "img-4   gol   img-5"
+                            "img-6   gol img-7"
+                            "img-8 img-9 img-10";
+
+    }
+    
+    #gol{
+        grid-area: gol;
+    }
+    #img-1{
+        grid-area: img-1;
+    }
+    #img-2{
+        grid-area: img-2;
+    }
+    #img-3{
+        grid-area: img-3;
+    }
+    #img-4{
+        grid-area: img-4;
+    }
+    #img-5{
+        grid-area: img-5;
+    }
+    #img-6{
+        grid-area: img-6;
+    }
+    #img-7{
+        grid-area: img-7;
+    }
+    #img-8{
+        grid-area: img-8;
+    }
+    #img-9{
+        grid-area: img-9;
+    }
+    #img-10{
+        grid-area: img-10;
+    }
+
+#grid-galerie figure{
+    border: none;
+    transition:  1.2s linear;
+}
+#grid-galerie figure:hover{
+    transform: scale(1.25) rotate(-10deg);
+   
+}
+#grid-galerie figure img:hover{
+    border: 4px solid var(--culoare-contur);   
+}
+@media screen and (max-width: 1100px){
+    #grid-galerie{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:"img-1 img-2"
+                            "img-3 img-4"
+                            "img-5 img-6"
+                            "img-7 img-8"
+                            "img-9 img-10";
+    }
+    
+}
+@media screen and (max-width: 700px){
+    #grid-galerie{
+        grid-template-columns: 1fr;
+        grid-template-areas:"img-1"
+                            "img-2"
+                            "img-3"
+                            "img-4"
+                            "img-5"
+                            "img-6"
+                            "img-7"
+                            "img-8"
+                            "img-9"
+                            "img-10";
+    }   
+    
+}
+</style>
+
+<div id="grid-galerie">
+    <div id="gol"></div>
+    <% i = 1 %>
+            <% for(let imag of locals.imagini){ %>
+                    <% if(  new Date().getMinutes() < Number(imag.sfert_ora) * 15 &&
+                            new Date().getMinutes() >= (Number(imag.sfert_ora) - 1) * 15 && i <= 10){ %>
+                    
+                    <figure id="img-<%= i %>">
+                        <picture>
+                        <source srcset=" <%- imag.fisier_mediu %>" media="(max-width:1100px)">
+                        <img src="<%- imag.cale_imagine %>" alt="<%- imag.titlu %>">
+                        </picture>
+                        <figcaption  class="galerie_index"><%- imag.descriere %></figcaption>
+                    </figure>
+                    <% i++ %>
+                 <% } %>
+            <% } %>
+</div>

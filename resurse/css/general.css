@@ -152,21 +152,26 @@ body>header,footer{
 }
 
 
+/* 
 #grid-galerie{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+} */
+
+#grid-galerie >*{
+  width: 230px;
 }
 
-#grid-galerie > figure {
-    margin: 5px;
-    text-align: center;
-}
+#grid-galerie  figure>picture>img {
+  display: block;
+} 
 
+/* 
 #grid-galerie img{
      border: 2px solid var(--culoare-contur);
-}
+}  */
 
 #Flash > div{
     display: flex;

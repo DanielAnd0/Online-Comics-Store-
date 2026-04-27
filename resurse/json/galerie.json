@@ -2,40 +2,125 @@
 	"cale_galerie":"resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","noiembrie","aprilie", "decembrie","octombrie"]
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
 		},
 		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"luni":["ianuarie","februarie","iunie","octombrie"]
-			
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
+		},		
+		{
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
+		},		
+		{
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
+		},		
+		{
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
 		},
 		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			
-			"luni":["noiembrie","aprilie", "decembrie"]
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
+		},		
+		{
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată",
-			
-			"luni":["noiembrie","aprilie", "decembrie","octombrie"]
+			"cale_imagine":"Naruto.png",
+			"titlu":"Naruto",
+			"descriere":"Naruto volumul 1",
+			"sfert_ora":"1"
+		},		
+		{
+			"cale_imagine":"One_Piece.png",
+			"titlu":"One Piece",
+			"descriere":"One Piece volumul 27",
+			"sfert_ora":"1"
+
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"cale_imagine":"Spider-Man.png",
+			"titlu":"Spider-Man",
+			"descriere":"Spider-Man",
+			"sfert_ora":"1"
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"cale_imagine":"Superman.png",
+			"titlu":"Superman",
+			"descriere":"Superman",
+			"sfert_ora":"2"
+		},
+		{
+			"cale_imagine":"Daredevil.png",
+			"titlu":"Daredevil",
+			"descriere":"Daredevil",
+			"sfert_ora":"2"	
+		},
+		{
+			"cale_imagine":"Wolverine.png",
+			"titlu":"Wolverine",
+			"descriere":"Wolverine",
+			"sfert_ora":"2"
+		},
+		{
+			"cale_imagine":"Ironman.png",
+			"titlu":"Ironman",
+			"descriere":"Ironman",
+			"sfert_ora":"3"
+		},
+		{
+			"cale_imagine":"Bleach.png",
+			"titlu":"Bleach",
+			"descriere":"Bleach volumul 1",
+			"sfert_ora":"3"
+		},
+		{
+			"cale_imagine":"HunterxHunter.png",
+			"titlu":"HunterxHunter",
+			"descriere":"HunterxHunter vol 1",
+			"sfert_ora":"3"
+		},
+		{
+			"cale_imagine":"Thor.png",
+			"titlu":"Thor",
+			"descriere":"Thor",
+			"sfert_ora":"4"
+		},
+		{
+			"cale_imagine":"Detective_Conan.png",
+			"titlu":"Detective Conan",
+			"descriere":"Detective Conan",
+			"sfert_ora":"4"
+		},
+		{
+			"cale_imagine":"Batman.png",
+			"titlu":"Batman",
+			"descriere":"Batman",
+			"sfert_ora":"4"
 		}
 	]
 }

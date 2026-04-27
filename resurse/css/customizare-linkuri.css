@@ -1,9 +1,44 @@
-a[href^="http://"],
-a[href^="https://"] {
+a.link[href^="http://"],
+a.link[href^="https://"] {
   color: var(--highlight-color);
+}
+
+                           
+a.link[href^="http://"]::before,
+a.link[href^="https://"]::before {
+    content: "\2BB3"; /* simbolul pentru link extern */
+    font-size: 150%;
+    color: var(--highlight-color);
 }
 
 
 
 /* link vizitat deja de utilizator */
-a:visited { color: var(--culoare-contur); }
+a.link[href^="http://"]:visited { color: var(--culoare-contur); }
+a.link[href^="https://"]:visited { color: var(--culoare-contur); }
+
+
+
+a.link:hover::before { color: var(--culoare-contur); }
+
+
+main a.link{
+    background-image: radial-gradient(ellipse at center, 
+    var(--culoare-fundal) 0%, 
+    var(--culoare-fundal) 40%, 
+    transparent 80%, 
+    transparent 100%
+);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0% 0%;
+    transition: background-size 0.5s linear;
+}
+
+main a.link:hover{
+    background-size: 100% 100%;
+}
+
+main a.link:active{
+    border: 1px solid var(--culoare-contur);
+}       

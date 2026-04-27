@@ -1,0 +1,27 @@
+@use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
+(
+    $body-bg:#2E6AE0,           // fundal pagină
+    $body-color: #FFFFFF,        // culoare text    
+    $link-color: #E0AA2F,        // culoare link-uri
+    $link-decoration: none,     // fără subliniere
+    $link-hover-decoration: none,
+
+
+    $h1-font-size: 3rem,
+    $h2-font-size: 2.25rem,
+    $h3-font-size: 1.75rem,
+    $h4-font-size: 1.375rem,
+    $h5-font-size: 1.125rem,
+    $h6-font-size: 0.95rem,
+
+
+    $border-radius:  0.75rem,
+
+    $font-family-base: 'Permanent Marker' #{','} cursive,
+
+    $transition-base: all 0.5s linear
+)
+//with inlocuieste variabilele (le suprascrie) care sunt luate din sursa bootstrap
+//acest scss ne va genera codul css cu variabilele coresp suprascrise
+
+ 
