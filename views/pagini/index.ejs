@@ -13,6 +13,7 @@
 
     <%- include('../fragmente/header.ejs') %>   
     <main> <!--  comentariu -->
+
         <div id="grid-pagina">
 
             <section id="zona1">
@@ -218,6 +219,7 @@
 
                 <section id="galerie-statica">
                     <h2 class="bungee-regular">Galerie</h2>
+                    <a href="/galerie">Link pagina galerie </a>
                      <%- include('../fragmente/galerie-statica.ejs') %>
                 </section>
 
@@ -338,6 +340,7 @@
             </section>
         </div>
     </main>
+    <p>IP: <%= locals.ip %></p>
     <%- include('../fragmente/footer.ejs') %>
 </body>
 

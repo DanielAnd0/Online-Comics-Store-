@@ -4,6 +4,8 @@ const fs=require("fs");
 const sass=require("sass");
 const sharp= require("sharp");
 
+// const ejs=require('ejs');
+const pg = require("pg");
 
 app= express();
 app.set("view engine", "ejs")
@@ -14,6 +16,7 @@ obGlobal={
     folderScss: path.join(__dirname,"resurse/scss"),
     folderCss: path.join(__dirname,"resurse/css"),
     folderBackup: path.join(__dirname,"backup"),
+    optiuniMeniu:[]
 }
 
 console.log("Folder index.js", __dirname);
@@ -22,6 +25,14 @@ console.log("Cale fisier", __filename);
 
 app.use("/resurse",express.static(path.join(__dirname, "resurse")));
 
+client=new pg.Client({
+    database:"cti_2026",
+    user:"daniel",
+    password:"parola",
+    host:"localhost",
+    port:5432
+})
+client.connect();
 
 
 let vect_foldere=[ "temp", "logs", "backup", "fisiere_uploadate" ]
@@ -53,6 +64,80 @@ app.get(["/", "/index","/home"], function(req, res){
         imagini:obGlobal.obImagini.imagini
     });
 });
+
+app.get("/galerie", function(req, res){
+    res.render("pagini/galerie", {
+        imagini:obGlobal.obImagini.imagini
+    });
+});
+
+
+
+app.get("/produse", function(req, res){
+    let clauzaWhere=""
+    if (req.query.tip)
+        clauzaWhere=`where tip_produs='${req.query.tip}'`
+    client.query(`select * from benzi_desenate ${clauzaWhere}`, function(err, rez){
+        if (err){
+            console.log("Eroare", err)
+            afisareEroare(res,2)
+        }
+        else{
+            client.query("select * from unnest(enum_range(null::tipuri_produse))", function(err, rezOptiuni){
+                if (err){
+                    afisareEroare(res,2)
+                }
+                else{
+                    client.query("SELECT DISTINCT autor FROM benzi_desenate WHERE autor IS NOT NULL ORDER BY autor", function(err, rezAutori){
+                        if (err){
+                            afisareEroare(res,2)
+                        }
+                        else{
+                            client.query("SELECT DISTINCT unnest(genuri) AS gen FROM benzi_desenate WHERE genuri IS NOT NULL ORDER BY gen", function(err, rezGenuri){
+                                if (err){
+                                    afisareEroare(res,2)
+                                }
+                                else{
+                                    res.render("pagini/produse",{
+                                        produse: rez.rows,
+                                        optiuni: rezOptiuni.rows,
+                                        autori: rezAutori.rows.map(r => r.autor),
+                                        genuri: rezGenuri.rows.map(r => r.gen)
+                                    })
+                                }
+                            })
+                        }
+                    })
+                }
+            })
+        }
+    })
+})
+
+
+app.get("/produs/:id", function(req, res){
+    client.query(`select * from benzi_desenate where id=${req.params.id}`, function(err, rez){
+    if (err){
+        console.log("Eroare", err)
+        afisareEroare(res,2)
+    }
+    else{
+        if (rez.rowCount==0){
+            afisareEroare(res,404,"Produs inexistent")
+        }
+        else{
+            
+            res.render("pagini/produs",{
+                prod:rez.rows[0],
+            })
+        }
+        
+    }
+})
+})
+
+
+
 
 
 app.get("/favicon.ico", function(req, res){
@@ -138,7 +223,7 @@ function initImagini(){
         let caleFisAbs=path.join(caleAbs,imag.cale_imagine);
         let caleFisMediuAbs=path.join(caleAbsMediu, numeFis+".webp");
         sharp(caleFisAbs).resize(230).toFile(caleFisMediuAbs);
-        imag.fisier_mediu=path.join("/", caleGalerie, "mediu", numeFis+".webp" )
+        imag.fisier_mediu=path.join("/", caleGalerie, "mediu", numeFis+".webp")
         imag.cale_imagine=path.join("/", caleGalerie, imag.cale_imagine)
 
     }

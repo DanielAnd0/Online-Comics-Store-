@@ -1,0 +1,152 @@
+
+<head>
+    <meta name="description" content="Cumpara comics și manga online. Gaseste seria ta favorita.">
+    <meta name="keywords" content="comic shop, benzi desenate, comics, manga, magazin online, produse">
+    <title>Pieces of Fiction - Produse</title>
+
+    <%- include('../fragmente/head.ejs') %>
+
+    <link rel="stylesheet" type="text/css" href="/resurse/css/produse.css">
+
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
+    <script type="text/javascript" src=/resurse/js/produse-cos.js></script>
+</head>
+ <body>
+
+
+    <%- include("../fragmente/header") %>
+
+<main>
+
+
+
+
+<section id="filtre">
+  
+    <!-- 1. text - nume -->
+    <label for="inp-nume">Nume:
+        <input type="text" id="inp-nume" placeholder="caută după nume...">
+    </label>
+
+    <!-- 2. range - volum minim -->
+    <label for="inp-volum-range">
+        Volum minim: <span id="volum-min">0</span>
+        <input type="range" id="inp-volum-range" min="0" max="20" step="1" value="0">
+        <span id="volum-max">20</span> (<span id="infoRange">0</span>)
+    </label>
+
+    <!-- 3. datalist - autor -->
+    <label for="inp-autor">Autor:
+        <input type="text" id="inp-autor" list="lista-autori" placeholder="orice autor">
+        <datalist id="lista-autori">
+            <% for (let autor of locals.autori) { %>
+                <option value="<%- autor %>">
+            <% } %>
+        </datalist>
+    </label>
+
+    <!-- 4. grup checkbox - varsta indicata -->
+    <div id="grup-varsta">
+        <p>Vârstă indicată:</p>
+        <p><label><input type="checkbox" class="chk-varsta" value="toate varstele"> Toate vârstele</label></p>
+        <p><label><input type="checkbox" class="chk-varsta" value="copii"> Copii</label></p>
+        <p><label><input type="checkbox" class="chk-varsta" value="adolescenti"> Adolescenți</label></p>
+        <p><label><input type="checkbox" class="chk-varsta" value="adulti"> Adulți</label></p>
+    </div>
+    <!-- 5. radio - culoare (boolean) -->
+    <div id="grup-culoare">
+        <p>Culoare:</p>
+        <p><label>Toate
+            <input type="radio" name="gr_color" value="toate" checked>
+        </label></p>
+        <p><label>Color
+            <input type="radio" name="gr_color" value="da">
+        </label></p>
+        <p><label>Alb-negru
+            <input type="radio" name="gr_color" value="nu">
+        </label></p>
+    </div>
+
+    <!-- 6. textarea - cauta in descriere -->
+    <label for="inp-descriere">Caută în descriere:
+        <textarea id="inp-descriere" rows="2" placeholder="cuvinte cheie..."></textarea>
+    </label>
+
+    <!-- 7. select simplu -->
+<label for="inp-data">Data:
+    <select id="inp-data">
+        <option value="oricare" selected>Oricand</option>
+        <option value="ultima-zi">Azi</option>
+        <option value="ultima-saptamana">Ultima săptămână</option>
+        <option value="ultima-luna">Ultima lună</option>
+        <option value="ultimul-an">Ultimul an</option>
+    </select>
+</label>
+
+    <!-- 8. select multiplu - genuri -->
+    <label for="inp-genuri">Genuri:
+        <select id="inp-genuri" multiple>
+            <% for (let gen of locals.genuri) { %>
+                <option value="<%- gen %>"><%- gen %></option>
+            <% } %>
+        </select>
+    </label>
+
+</section>
+
+
+        <p>
+        <button class="c1 c2 c3" id="filtrare">Filtreaza</button> 
+
+        <button id="resetare">Reseteaza</button><br/>
+        <button id="sortCrescNume">Sorteaza crescator dupa pret si nume</button>
+        <button id="sortDescrescNume">Sorteaza descrescator dupa pret si nume</button>
+        
+        </p>
+      
+        <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+  
+        <section id="produse">
+
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                        <article class="produs <%- prod.tip_produs %>" id="elem_<%- prod.id %>">
+                            <h3><a href="/produs/<%- prod.id %>"><span class="val-nume"><%- prod.nume %></span></a></h3>
+                            
+                            <div class="produs-body">
+                                <div class="info-prod">
+                                    <table>
+                                        <tr><td>Preț</td><td><span class="val-pret"><%- prod.pret %></span></td></tr>
+                                        <tr><td>Autor</td><td><span class="val-autor"><%- prod.autor %></span></td></tr>
+                                        <tr><td>Volum</td><td><span class="val-volum"><%- prod.volum %></span></td></tr>
+                                        <tr><td>Genuri</td><td><span class="val-genuri"><%- prod.genuri %></span></td></tr>
+                                        <tr style="display: none;"><td>Vârstă indicată</td><td><span class="val-varsta"><%- prod.varsta_indicata %></span></td></tr>
+                                        <tr><td>Data adăugării</td><td><time class="val-data"><%- prod.data_adaugare%></time></td></tr>
+                                        <tr><td>Color</td><td class="val-culoare"><% if(prod.color){ %>DA<% } else { %>NU<% } %></td></tr>
+                                    </table>
+                                </div>
+
+                                <figure>
+                                    <a href="/produs/<%- prod.id %>">
+                                        <img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]"/>
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <p class="val-descriere" style="display:none;"><%- prod.descriere %></p>
+                            <p class="categorie">Categorie: <span class="val-categorie"><%- prod.tip_produs %></span></p>
+
+                            <label class="selecteaza-cos">
+                                Selectează:<br/>
+                                <input type="checkbox" class="select-cos" value="<%- prod.id %>" autocomplete="off">
+                            </label>
+                        </article>                              
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

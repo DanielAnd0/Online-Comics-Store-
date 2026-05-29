@@ -1,0 +1,54 @@
+
+<head>
+    <meta name="description" content="Cumpara comics și manga online. Gaseste seria ta favorita.">
+    <meta name="keywords" content="comic shop, benzi desenate, comics, manga, magazin online, produse">
+    <title>Pieces of Fiction - Produse</title>
+
+    <%- include('../fragmente/head.ejs') %>
+
+    <link rel="stylesheet" type="text/css" href="/resurse/css/produse.css">
+
+    <script type="text/javascript" src=/resurse/js/produse-cos.js></script>
+    <script type="text/javascript" src=/resurse/js/produse.js></script>
+    
+</head>
+ <body>
+
+
+    <%- include("../fragmente/header") %>
+
+<main>
+
+<article class="produs <%- prod.tip_produs %>" id="elem_<%- prod.id %>">
+            <h3><a href="/produs/<%- prod.id %>"><span class="val-nume"><%- prod.nume %></span></a></h3>
+                            
+                    <div class="produs-body">
+                                <div class="info-prod">
+                                    <table>
+                                        <tr><td>Preț</td><td><span class="val-pret"><%- prod.pret %></span></td></tr>
+                                        <tr><td>Autor</td><td><span class="val-autor"><%- prod.autor %></span></td></tr>
+                                        <tr><td>Volum</td><td><span class="val-volum"><%- prod.volum %></span></td></tr>
+                                        <tr><td>Genuri</td><td><span class="val-genuri"><%- prod.genuri %></span></td></tr>
+                                        <tr><td>Vârstă indicată</td><td><span class="val-varsta"><%- prod.varsta_indicata %></span></td></tr>
+                                        <tr><td>Data adăugării</td><td><time class="val-data"><%- prod.data_adaugare%></time></td></tr>
+                                        <tr><td>Color</td><td class="val-culoare"><% if(prod.color){ %>DA<% } else { %>NU<% } %></td></tr>
+                                    </table>
+                            </div>
+
+                                <figure>
+                                    <a href="/produs/<%- prod.id %>">
+                                        <img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]"/>
+                                    </a>
+                                </figure>
+                            </div>
+
+                            <p class="val-descriere"><%- prod.descriere %></p>
+                            <p class="categorie">Categorie: <span class="val-categorie"><%- prod.tip_produs %></span></p>
+                        </article>                              
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>
