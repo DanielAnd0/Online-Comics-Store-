@@ -23,19 +23,19 @@
 
 <section id="filtre">
   
+<div class="row">
     <!-- 1. text - nume -->
-    <label for="inp-nume">Nume:
-        <input type="text" id="inp-nume" placeholder="caută după nume...">
-    </label>
 
-    <!-- 2. range - volum minim -->
-    <label for="inp-volum-range">
-        Volum minim: <span id="volum-min">0</span>
-        <input type="range" id="inp-volum-range" min="0" max="20" step="1" value="0">
-        <span id="volum-max">20</span> (<span id="infoRange">0</span>)
-    </label>
+    <div class="col-12 col-md-6 col-xl-4">
+        <label for="inp-nume">Nume:
+            <input type="text" id="inp-nume" placeholder="caută după nume...">
+        </label>
+    </div>
+
+
 
     <!-- 3. datalist - autor -->
+    <div class = "col-12 col-md-6 col-xl-4">
     <label for="inp-autor">Autor:
         <input type="text" id="inp-autor" list="lista-autori" placeholder="orice autor">
         <datalist id="lista-autori">
@@ -44,17 +44,41 @@
             <% } %>
         </datalist>
     </label>
+    </div>
 
+        <!-- 2. range - volum minim -->
+    <div class = "col-12 col-md-6 col-xl-4">
+        <label class = "form-label" for="inp-volum-range">Volum minim:</label>
+        <div>
+            <span id="volum-min">0</span>
+            <input type="range" class="form-range" id="inp-volum-range" min="0" max="20" step="1" value="0">
+            <span id="volum-max">20</span> (<span id="infoRange">0</span>)  
+        </div>
+    </div>
+    
     <!-- 4. grup checkbox - varsta indicata -->
-    <div id="grup-varsta">
+     <div class="col-12 col-md-6 col-xl-6" id="grup-varsta">
         <p>Vârstă indicată:</p>
-        <p><label><input type="checkbox" class="chk-varsta" value="toate varstele"> Toate vârstele</label></p>
-        <p><label><input type="checkbox" class="chk-varsta" value="copii"> Copii</label></p>
-        <p><label><input type="checkbox" class="chk-varsta" value="adolescenti"> Adolescenți</label></p>
-        <p><label><input type="checkbox" class="chk-varsta" value="adulti"> Adulți</label></p>
+        <p>
+            <input type="checkbox" class="chk-varsta btn-check" id="toate" value="toate varstele">
+            <label class="btn btn-outline-secondary" for="toate"> Toate vârstele</label>
+        </p>
+        <p>
+            <input type="checkbox" class="chk-varsta btn-check" id="copii" value="copii">
+            <label class="btn btn-outline-secondary" for="copii">Copii</label>
+        </p>
+        <p>
+            <input type="checkbox" class="chk-varsta btn-check" id="adolescenti" value="adolescenti">
+            <label class="btn btn-outline-secondary" for="adolescenti">Adolescenți</label>
+            
+        </p>
+        <p>
+            <input type="checkbox" class="chk-varsta btn-check" id="adulti" value="adulti">
+            <label class="btn btn-outline-secondary" for="adulti">Adulți</label>
+        </p>
     </div>
     <!-- 5. radio - culoare (boolean) -->
-    <div id="grup-culoare">
+    <div class="col-12 col-md-6 col-xl-6" id="grup-culoare">
         <p>Culoare:</p>
         <p><label>Toate
             <input type="radio" name="gr_color" value="toate" checked>
@@ -68,12 +92,24 @@
     </div>
 
     <!-- 6. textarea - cauta in descriere -->
-    <label for="inp-descriere">Caută în descriere:
-        <textarea id="inp-descriere" rows="2" placeholder="cuvinte cheie..."></textarea>
-    </label>
 
+<div class="col-12 col-md-6 col-xl-4">Cauta in descriere:
+<div class="form-floating">
+       
+        <textarea class="form-control" id="inp-descriere" placeholder="Descriere..."></textarea>
+        <label for="inp-descriere">Descriere...</label>
+
+        <div class="invalid-feedback">
+            Descrierea trebuie să aibă text cel putin 10 caractere si sa contina doar litere, cifre, semne de punctuatie.
+        </div>
+    </div>
+</div>
+
+   
     <!-- 7. select simplu -->
-<label for="inp-data">Data:
+<div class="col-12 col-md-6 col-xl-4">
+<label>Data:
+<label for="inp-data">
     <select id="inp-data">
         <option value="oricare" selected>Oricand</option>
         <option value="ultima-zi">Azi</option>
@@ -82,30 +118,32 @@
         <option value="ultimul-an">Ultimul an</option>
     </select>
 </label>
+</label>
+</div>
 
+<div class="col-12 col-md-6 col-xl-4">
+<label>Genuri:</label>
     <!-- 8. select multiplu - genuri -->
-    <label for="inp-genuri">Genuri:
+    <label for="inp-genuri">
         <select id="inp-genuri" multiple>
             <% for (let gen of locals.genuri) { %>
                 <option value="<%- gen %>"><%- gen %></option>
             <% } %>
         </select>
     </label>
+</div>
+ </div>
 
-</section>
+        <p id="p-butoane">
+            <button class="btn btn-primary" id="filtrare"> <i class="bi bi-funnel-fill"></i><span> Filtreaza </span></button> 
+            <button class="btn btn-primary" id="resetare"> <i class="bi bi-arrow-clockwise"></i><span> Reseteaza </span></button>
 
-
-        <p>
-        <button class="c1 c2 c3" id="filtrare">Filtreaza</button> 
-
-        <button id="resetare">Reseteaza</button><br/>
-        <button id="sortCrescNume">Sorteaza crescator dupa pret si nume</button>
-        <button id="sortDescrescNume">Sorteaza descrescator dupa pret si nume</button>
-        
+            <button class="btn btn-primary" id="sortCrescNume"> <i class="bi bi-sort-alpha-up"></i><span> Sorteaza crescator dupa pret si nume</span></button>
+            <button class="btn btn-primary" id="sortDescrescNume"> <i class="bi bi-sort-alpha-down"></i><span> Sorteaza descrescator dupa pret si nume</span></button>
         </p>
-      
+
         <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
-  
+  </section>
         <section id="produse">
 
             <h2>Produse</h2>

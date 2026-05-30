@@ -16,10 +16,20 @@
 
 
     $border-radius:  0.75rem,
+    $border-width: 3px,
 
     $font-family-base: 'Permanent Marker' #{','} cursive,
 
-    $transition-base: all 0.5s linear
-)
+    $transition-base: all 0.5s linear,
 
- 
+
+    $primary: #2E6AE0,  
+    $secondary: #363430,  
+    
+    
+    $form-range-thumb-width:  1.5rem,
+    $form-range-thumb-bg: #363430,
+    $form-range-thumb-active-bg: #363430,
+    $form-range-track-bg: #2E6AE0 
+
+);

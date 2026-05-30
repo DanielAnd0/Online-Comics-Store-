@@ -196,5 +196,25 @@ window.onload = function(){
         }
     }
 
+    
+
+
+
+   const textarea = document.getElementById("inp-descriere");
+   
+   textarea.addEventListener("input", function () {
+   const val = textarea.value;
+
+   const valid = /^[a-zA-Z0-9\s.,!?;:'"-]{5,}$/.test(val);
+
+        if (valid) {
+                    textarea.classList.remove("is-invalid");
+                    textarea.classList.add("is-valid");
+        } else {
+                    textarea.classList.add("is-invalid");
+                    textarea.classList.remove("is-valid");
+                }
+
+    });
 
 }
