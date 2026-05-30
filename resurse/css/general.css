@@ -10,6 +10,17 @@ body{
     color:var(--culoare-text)
 }
 
+body.dark{
+    --highlight-color: #E0AA2F;
+    --culoare-fundal: #363430;
+    --culoare-text: #FFFFFF;
+    --culoare-fundal-text: #454E61;
+    --culoare-fundal-text2: #4A67A1;
+    --culoare-contur: #2E6AE0;
+    background-color: var(--culoare-fundal);
+    color:var(--culoare-text)
+}
+
 
 a{
     color: var(--highlight-color);
