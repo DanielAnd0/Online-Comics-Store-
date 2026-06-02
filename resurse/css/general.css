@@ -21,6 +21,11 @@ body.dark{
     color:var(--culoare-text)
 }
 
+#switch-tema{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
 
 a{
     color: var(--highlight-color);

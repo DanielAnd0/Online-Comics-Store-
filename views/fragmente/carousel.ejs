@@ -1,0 +1,9 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% for(produs in locals.produse) { %>
+      <div class="carousel-item <%= produs === 0 ? 'active' : '' %>">
+        <img class="d-block w-100" src="<%= locals.produse[produs].imagine %>" alt="<%= locals.produse[produs].nume %>">
+      </div>
+    <% } %>
+  </div>
+</div>

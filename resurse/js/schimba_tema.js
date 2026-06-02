@@ -1,5 +1,8 @@
 window.addEventListener("DOMContentLoaded", function(){
-document.getElementById("schimba_tema").onclick= function(){
+
+
+sw = document.getElementById("schimba_tema")
+sw.addEventListener("change", function(){
     if(document.body.classList.contains("dark")){
         document.body.classList.remove("dark")
         localStorage.removeItem("tema");
@@ -9,4 +12,5 @@ document.getElementById("schimba_tema").onclick= function(){
         localStorage.setItem("tema","dark");
     }
 }
-});
+);
+})

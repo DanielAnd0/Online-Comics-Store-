@@ -35,7 +35,9 @@
                         </ul>
                     </li>
                     <li>
-                        <!-- <i class="fa-solid fa-cart-shopping" style="color: var(--culoare-fundal);"></i> -->
+                        <a href="/inregistrare" style="color: var(--culoare-fundal);">Inregistrare</a>
+                    </li>
+                    <li>
                         <a href="/produse" style="color: var(--culoare-fundal);">Produse</a>
                         
                         <ul class="submeniu">
@@ -75,6 +77,12 @@
                         <!-- <i class="fa-solid fa-cart-shopping" style="color: var(--culoare-fundal);"></i> -->
                         <a href="/despre" style="color: var(--culoare-fundal);">Despre</a>
                     </li>
+                    <%- 
+                        include("submeniu-administrare.ejs") 
+                    %>
+                    <%- 
+                        include("submeniu-utilizator-logat.ejs") 
+                    %>
                 </ul>
             </nav>
             <div id="pagina-titlu">
@@ -84,12 +92,12 @@
             <i class="fa-brands fa-leanpub" style="color: var(--culoare-fundal);"></i>
             </h1>
             </div>
-            <div>
-                <i class="bi bi-sun-fill"></i>
+            <div id="switch-tema">
+                <i class="bi bi-moon-fill"></i>
                 <div class="form-check form-switch">
                         <input class="form-check-input bg-info" type="checkbox" id="schimba_tema" checked>
                 </div>
-                <i class="bi bi-moon-fill"></i>
+                <i class="bi bi-sun-fill"></i>
             </div>
             
     </header>
