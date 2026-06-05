@@ -74,12 +74,10 @@ class AccesBD{
                     case "local":this.#instanta.initLocal();
                 }
                 //daca ajunge aici inseamna ca nu s-a produs eroare la initializare
-                
             }
             catch (e){
                 console.error("Eroare la initializarea bazei de date!");
             }
-
         }
         return this.#instanta;
     }

@@ -41,7 +41,7 @@ window.onload = function(){
         for (let rad of grupColor){
             if (rad.checked){
                 colorSelectat = rad.value
-                break
+                break   
             }
         }
 
@@ -67,8 +67,7 @@ window.onload = function(){
             let volum = parseInt(prod.getElementsByClassName("val-volum")[0].innerHTML.trim())
             let cond2 = volum > inpVolum
 
-            // 3. filtru autor
-     
+            // 3. filtru autor  
             let autor = prod.getElementsByClassName("val-autor")[0].innerHTML.trim().toLowerCase()
             if(/^[a-zA-Z\s]+$/.test(inpAutor) == false && inpAutor != ""){
                 alert("Câmpul autor este invalid!")
